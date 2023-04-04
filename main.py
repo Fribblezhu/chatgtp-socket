@@ -29,7 +29,7 @@ async def handler(websocket, path):
         id = str(uuid.uuid4())
         if 'secret' not in chat or chat['secret'] != secret:
             data = {'type': 'error', 'content': 'chat.error_secret', 'conversationId': chat['conversationId'],
-                    'id': id, 'prompt': chat['prompt'], 'finished_reason': 'error_secret'}
+                    'id': id, 'prompt': chat['prompt'], 'finished_reason': 'error_secret_' + secret}
             await websocket.send(json.dumps(data, ensure_ascii=False))
         else:
             try:
