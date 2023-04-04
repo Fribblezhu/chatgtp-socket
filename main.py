@@ -50,7 +50,8 @@ async def handler(websocket, path):
                     data['prompt'] = chat['prompt']
                     data['finished_reason'] = chunk['choices'][0]['finish_reason']
                     await websocket.send(json.dumps(data, ensure_ascii=False))
-            except Exception:
+            except Exception as reason:
+                logging.error('error%s' % str(reason))
                 data = {'type': 'error', 'content': 'chat.error_secret', 'conversationId': chat['conversationId'],
                         'id': id, 'prompt': chat['prompt'], 'finished_reason': 'api_error'}
                 await websocket.send(json.dumps(data, ensure_ascii=False))
