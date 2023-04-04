@@ -11,13 +11,14 @@ import uuid
 import os
 
 router = websockets_routes.Router()
+
 # openai.api_key = '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'
-openai.api_key = os.environ.get('OPENAPI_KEY')
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 # secret = 'coolaw_admin'
 secret = os.environ.get('CHAT_SECRET')
 
-print(openai.api_key)
-print(secret)
+print('api_key: ' + openai.api_key)
+print('secret: ' + secret)
 
 
 @router.route("/websocket-chat/{user}")
