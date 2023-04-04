@@ -2,7 +2,7 @@ FROM python:3.8.16-alpine
 
 WORKDIR /usr/src/chat
 
-ENV OEPNAPI_KEY=""
+ENV OPENAPI_KEY=""
 
 ENV CHAT_SECRET="sparkle-secret"
 

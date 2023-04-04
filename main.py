@@ -12,7 +12,7 @@ import os
 
 router = websockets_routes.Router()
 # openai.api_key = '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'
-openai.api_key = os.environ.get('OEPNAPI_KEY')
+openai.api_key = os.environ.get('OPENAPI_KEY')
 # secret = 'coolaw_admin'
 secret = os.environ.get('CHAT_SECRET')
 
